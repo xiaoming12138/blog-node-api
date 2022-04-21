@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node index.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.prod.js",
-    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node --inspect index.js",
+    "dev": "cross-env NODE_ENV=development nodemon --use --exec babel-node --inspect index.js",
     "watch": "cross-env NODE_ENV=development webpack --watch --progress --config config/webpack.config.dev.js",
     "debug": "nodemon --inspect ./dist/server.bundle.js",
     "serve": "npm-run-all -p watch debug",
