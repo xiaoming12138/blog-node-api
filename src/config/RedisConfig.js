@@ -1,8 +1,6 @@
 import { createClient } from 'redis'
 import config from './index'
-const client = createClient({
-  url: config.REDIS_URL
-})
+const client = createClient(6379, 'localhost')
 client.on('ready', () => {
   console.log('Redis Client Connect Successfully=>' + config.REDIS_URL)
 })
