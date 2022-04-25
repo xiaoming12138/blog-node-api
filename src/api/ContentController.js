@@ -1,4 +1,5 @@
 import Post from '@/model/Post'
+import DelPost from '@/model/delPost'
 import Link from '@/model/Link'
 import Users from '@/model/User'
 import CollectRecords from '@/model/CollectRecords'
@@ -212,6 +213,22 @@ class ContentController {
       const postData = await Post.getDetails(tid)
       if (postData) {
         if (postData.isEnd !== 1) {
+          const del = await Post.getDetails({_id: tid})
+          const userInfo = {
+            _id: del.userInfo._id,
+            nickName: del.userInfo.nickName,
+            role: del.userInfo.role,
+            pic: del.userInfo.pic,
+            vip: del.userInfo.vip
+          }
+          const delPost = new DelPost({
+            title:del.title,
+            type:del.type,
+            fav:del.fav,
+            content:del.content,
+            userInfo: JSON.stringify(userInfo)
+          })
+          delPost.save()
           await Post.deleteOne({ _id: tid })
           responseSuccess(ctx, '删除成功！')
         } else {
