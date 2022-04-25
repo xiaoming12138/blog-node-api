@@ -2,7 +2,7 @@ export default {
   // 数据库连接地址
   MONGO_URL: 'mongodb://localhost:27017/community',
   // redis连接地址
-  REDIS_URL: 'redis://localhost:6379',
+  REDIS_URL: 'redis://:123456@localhost:6379',
   // jwt秘钥
   JWT_SECRET: 'QWEFJIOJCV189CIOEWF1FSDFJIOWFV456RFGJIOQWD54VCVBJIUESFJIO',
   // 文件上传路径地址
