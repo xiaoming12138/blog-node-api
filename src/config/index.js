@@ -8,7 +8,7 @@ export default {
   // 文件上传路径地址
   UPLOAD_PATH: 'public',
   // 前端访问地址
-  FRONT_URL: process.env.NODE_ENV === 'production' ? 'http://180.76.108.65:11006/#/reset' : 'http://180.76.108.65:8080/#/reset',
+  FRONT_URL: process.env.NODE_ENV === 'production' ? 'http://116.205.136.108:11006/#/reset' : 'http://116.205.136.108:8080/#/reset',
   // 邮件服务账号密码配置
   NODE_MAIL_USER: '13716103242@163.com',
   NODE_MAIL_PASS: 'L15939606467',
